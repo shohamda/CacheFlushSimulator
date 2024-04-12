@@ -1,1 +1,1 @@
-Please read the ./README.pdf
+[README](README.pdf)
