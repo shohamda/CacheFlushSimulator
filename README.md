@@ -13,11 +13,11 @@ DNS-CacheFlushSimulator is an Inner-Emulator environment for DNS protocol which 
 DNS-CacheFlushSimulator includes clients, resolver and four authoritative name servers. The resolver is a BIND9 recursive resolver with the latest version (9.18.21). The four authoritative name servers are: a ‘root’, an attacker, and two malicious delegation authoritative name servers.
 
 Most of the CacheFlushAttack measurements were carried out on a BIND9 version 9.18.21 resolver compiled to work with the local ‘root’ authoritative name server.
-The authoritative name servers are implemented with Name Server Daemon \href{https://www.nlnetlabs.nl/projects/nsd/about/}{(NSD)} version 4.3.3.
+The authoritative name servers are implemented with Name Server Daemon [NSD](https://www.nlnetlabs.nl/projects/nsd/about/) version 4.3.3.
 The clients are deployed on the same machine, which was configured to send DNS queries directly to the local recursive resolver. 
-The setup configuration and environment are provided in \href{https://github.com/shohamda/CacheFlushSimulator}{GitHub} (\textit{https://github.com/shohamda/CacheFlushSimulator}).
+The setup configuration and environment are provided in [GitHub](https://github.com/shohamda/CacheFlushSimulator) (https://github.com/shohamda/CacheFlushSimulator).
 
-In order to use \envname, a docker \href{https://docs.docker.com/get-docker/}{docker} is required.
+In order to use \envname, a [docker](https://docs.docker.com/get-docker/) is required.
 ### Security, Privacy, and Ethical Concerns
 
 To ensure safety, the environment runs locally in a closed Docker container environment. It's crucial to use the "--dns 127.0.0.1" flag for configuration.
