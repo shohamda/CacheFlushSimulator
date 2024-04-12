@@ -36,10 +36,9 @@ Reproducing Experiments
 To reproduce the experiments presented in the CacheFlushAttack paper, please follow the instructions detailed in the experiments directory in the systemname. Specifically, the experiments for CacheFlushNS are in the experiments/CacheFlushNS directory, and the experiments for CacheFlushCNAME are in the experiments/CacheFlushCNAME directory. For more details, please refer to the CacheFlushAttack paper.
 
 ### Citation
-If you find envname or this artifact useful in your work, please consider citing:
+If you find **envname** or this artifact useful in your work, please consider citing:
 
-bibtex
-Copy code
+```bibtex
 @inproceedings{DBLP:conf/uss/DaganDK20,
   author    = {Shoham Dagan and
                Yuval Elovici and
@@ -57,4 +56,3 @@ Copy code
   biburl    = {https://dblp.org/rec/conf/uss/DaganDK20.bib},
   bibsource = {dblp computer science bibliography, https://dblp.org}
 }
-This README provides detailed instructions on how to set up and use the artifact appendix for the CacheFlushAttack research, including all necessary dependencies, installation steps, and how to reproduce experiments.
