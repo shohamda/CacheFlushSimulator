@@ -20,9 +20,9 @@ envname source code can be found at envname GitHub (1.0 Tag). The environment Do
 There are no hardware dependencies required for using envname. During our research, we used an Ubuntu computer or Virtual Machine (we recommend using Ubuntu 20.04 or above) which is capable of running Docker images according to "Install Docker Engine on Ubuntu" specification.
 
 #### Software dependencies
-Docker
-WireShark (To install WireShark on Ubuntu use: apt install wireshark).
-Resperf (To install Resperf on Ubuntu use: apt install resperf).
+1. Docker
+2. WireShark (To install WireShark on Ubuntu use: apt install wireshark).
+3. Resperf (To install Resperf on Ubuntu use: apt install resperf).
 
 ## Benchmarks
 In order to conduct the experiments described in CacheFlushAttack paper (see Benchmarks section), the setup should contain a BIND resolver with a new version bind9.18.21 and at four authoritative servers (local root authoritative and three authoritative to simulate the attack.com and delegation.attack authoritative). For CacheFlushNS Attack, a malicious zone file is required for the attacker authoritative (i.e., home.lan.forward for home.lan server). The malicious zone file contains malicious referral list with 1900 NS for each domain, which all delegate the resolver to a server IP address that is non-responsive to DNS queries through another authoritative server (the local root server can also be used to delegate the resolver to this IP address). For CacheFlushCNAME Attack, a malicious zone file is required for the attacker authoritative as well (i.e., home.lan.forward_CNAME for home.lan server). The malicious zone file contains a malicious CNAME chain of 1 million records, each pointing to the next domain.
