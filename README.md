@@ -2,8 +2,11 @@
 
 ## Abstract
 
-This setup is designed to fully understand the root cause of the CacheFlushAttack and analyze its effective flush rate. It includes a mini-lab setup disconnected from the Internet, containing all components of the DNS system: clients, resolvers, and authoritative name servers. While not suitable for performance analysis, it enables detailed examination and behavioral analysis of resolver behavior.
-
+To fully understand the root cause of the CacheFlushAttack and to analyze its effective flush rate, we developed a mini-lab setup, disconnected from the Internet, that contains all the components of the DNS system, clients, resolvers, and authoritative name servers. 
+This setup is built to analyze and examine the behavior of a resolver (or any other component) in details.
+On the other hand it is not useful for performance analysis (stress analysis).  
+Here we provide the code and details of this setup enabling to reproduce our analysis.  Moreover, researchers may find it useful for
+farther behavioral analysis and examination of different components in the DNS system.
 ## Description & Requirements
 
 The CacheFlushAttack environment, named DNS-CacheFlushSimulator, is an Inner-Emulator environment for DNS protocol research. It includes clients, a resolver, and four authoritative name servers. The resolver is a BIND9 recursive resolver (version 9.18.21), while the authoritative name servers are implemented with Name Server Daemon (NSD) version 4.3.3. Docker is required to use this environment.
