@@ -15,12 +15,10 @@ def find_cache_miss(benign_client_file, authoritative_file):
         benign_queries = benign_df[benign_df['dns.qry.name'] == domain]
         auth_queries = auth_df[auth_df['dns.qry.name'] == domain]
         
-        # If no queries found in authoritative server, it's a cache miss
         if auth_queries.empty:
             cache_misses[domain] = 1
             continue
         
-        # Check if benign queries were sent to authoritative server
         cache_miss_count = 0
         for _, row in benign_queries.iterrows():
             if row['ip.dst'] in auth_queries['ip.src'].values:
@@ -36,12 +34,10 @@ def write_cache_miss_csv(cache_misses, output_file):
     df = pd.DataFrame(cache_misses.items(), columns=['Domain', 'Cache Misses'])
     df.to_csv(output_file, index=False)
     
-    # Calculate average cache miss
     avg_cache_miss = df['Cache Misses'].mean()
     with open(output_file, 'a') as f:
         f.write(f'\nAverage Cache Miss,{avg_cache_miss}')
 
-# Example usage
 benign_client_file = '/env/reproduction/tshark_benign_client.txt'
 authoritative_file = '/env/reproduction/tshark_auth.txt'
 output_file = '/env/reproduction/cache_misses.csv'
